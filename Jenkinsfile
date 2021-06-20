@@ -15,14 +15,16 @@ pipeline {
 post {
     always {
         cucumber buildStatus: 'UNSTABLE',
-                failedFeaturesNumber: 1,
-                failedScenariosNumber: 1,
-                skippedStepsNumber: 1,
-                failedStepsNumber: 1,
-                reportTitle: 'My report',
-                fileIncludePattern: '**/*cucumber-report.json',
-                sortingMethod: 'ALPHABETICAL',
-                trendsLimit: 100
+ cucumber failedFeaturesNumber: -1,
+ failedScenariosNumber: -1,
+ failedStepsNumber: -1,
+ fileIncludePattern: 'cucumber-json-report.json',
+ jsonReportDirectory: 'target',
+ pendingStepsNumber: -1,
+ reportTitle: 'cucumber-report',
+ skippedStepsNumber: -1,
+ sortingMethod: 'ALPHABETICAL',
+ undefinedStepsNumber: -1
     }
 }
         }
